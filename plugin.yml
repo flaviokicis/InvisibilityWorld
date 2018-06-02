@@ -1,0 +1,9 @@
+name: InvisibilityWorld
+version: 0.1alpha
+main: io.github.prismahasbeentaken.iworld.main.IWorld
+author: JhonLendo
+commands:
+  iworld:
+    aliases: iw
+    permission: iworld.use
+    description: List useful commands
