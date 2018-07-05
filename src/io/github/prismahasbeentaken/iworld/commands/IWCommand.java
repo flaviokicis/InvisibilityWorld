@@ -21,7 +21,7 @@ public class IWCommand implements CommandExecutor {
 	public boolean onCommand(CommandSender sender, Command cmd, String label, String[] args) {
 		// Check permissions
 		if (!sender.hasPermission(cmd.getPermission())) {
-			sender.sendMessage("§cYou do not have sufficient permissions");
+			sender.sendMessage("Â§cYou do not have sufficient permissions");
 			return true;
 		}
 		if (args.length == 0) {
@@ -37,7 +37,7 @@ public class IWCommand implements CommandExecutor {
 					   IWUtils.invalidWorldMessage(sender);
 				   } else {
 					   this.effect.setWorld(w);
-					   sender.sendMessage("§aWorld Successfully Added!");
+					   sender.sendMessage("Â§aWorld Successfully Added!");
 				   }
 			   }
 			} else if (args[0].equalsIgnoreCase("delete")) {
@@ -49,15 +49,16 @@ public class IWCommand implements CommandExecutor {
 					   IWUtils.invalidWorldMessage(sender);
 				   } else {
 					   this.effect.remWorld(w);
-					   sender.sendMessage("§aWorld Successfully Removed!");
+					   sender.sendMessage("Â§aWorld Successfully Removed!");
 				   }
 			   }
 			} else if (args[0].equalsIgnoreCase("list")) {
+				sender.sendMessage("Â§aThese are the affected worlds:");
 				for (String s : this.effect.getWorldList()) {
-					sender.sendMessage("§e- " + s);
+					sender.sendMessage("Â§e- " + s);
 				}
 			} else {
-            sender.sendMessage("§cInvalid argument! Use:");
+            sender.sendMessage("Â§cInvalid argument! Use:");
     		IWUtils.sendList(sender);
 			}
 		}
